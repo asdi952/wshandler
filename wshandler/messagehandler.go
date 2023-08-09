@@ -10,13 +10,13 @@ import (
 func New(conn *websocket.Conn, length int) *MessageHandler {
 	return &MessageHandler{
 		handlers: make([]*handler, length, length),
-		conn:     conn,
+		Conn:     conn,
 	}
 }
 
 type MessageHandler struct {
 	handlers []*handler
-	conn     *websocket.Conn
+	Conn     *websocket.Conn
 }
 type handler struct {
 	callback func(layout *MessageLayout) error
@@ -85,7 +85,7 @@ func (m *MessageHandler) Send(in MessageData) error {
 	if err != nil {
 		return err
 	}
-	err = m.conn.WriteMessage(websocket.TextMessage, buff)
+	err = m.Conn.WriteMessage(websocket.TextMessage, buff)
 	if err != nil {
 		return err
 	}
