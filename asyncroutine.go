@@ -1,4 +1,4 @@
-package wsasyncroutine
+package wshandler
 
 import "encoding/json"
 
