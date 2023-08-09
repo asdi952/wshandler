@@ -1,4 +1,4 @@
-package main
+package wshandler
 
 import (
 	"encoding/json"
