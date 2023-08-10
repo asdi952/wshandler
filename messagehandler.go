@@ -92,7 +92,7 @@ func (m *MessageHandler) Send(in MessageData) error {
 	return nil
 }
 
-type MessageLayout struct {
+type MessageLayout struct { // asd
 	Type    int
 	Message json.RawMessage
 }
